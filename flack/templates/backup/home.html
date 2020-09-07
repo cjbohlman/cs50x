@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login: ReadingRevs
+{% endblock %}
+
+{% block body %}
+<p>Hello, {{ user }}!</p>
+<form action="{{ url_for('search') }}" method="post">
+    <input type="text" name="search_criteria" placeholder="What book are you looking for?">
+    <br>
+    <button class= "login" type="search" name="search">Search</button>
+<form>
+<p>{{ errormessage }}</p>
+{% endblock %}

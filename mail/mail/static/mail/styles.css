@@ -1,0 +1,17 @@
+textarea {
+    min-height: 400px;
+}
+
+.read-email{
+    background-color: grey;
+    border: solid;
+    padding: 5px;
+    margin: 5px;
+}
+
+.unread-email{
+    background-color: white;
+    border: solid;
+    padding: 5px;
+    margin: 5px;
+}

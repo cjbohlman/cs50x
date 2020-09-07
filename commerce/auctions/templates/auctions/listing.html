@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Listing: {{ listing.name }}</h2>
+    <p>Description: {{ listing.description }}</p>
+    <p>Category: {{ listing.category }}</p>
+    <p>Price: {{ listing.price }}</p>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    <a href="{% url 'watchlist_add' listing.id %}">Add Listing To Watchlist</a>
+
+    <form action="{% url 'listing' listing.id %}" method="POST">
+        {% csrf_token %}
+        {{ bid_form }}
+        <input type="submit"value="Bid">
+    </form>
+    <br>
+    <form action="{% url 'comment' listing.id %}" method="POST">
+        {% csrf_token %}
+        {{ comment_form }}
+        <input type="submit"value="Comment">
+    </form>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.user }}: {{ comment.comment }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

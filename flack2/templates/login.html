@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flack: Login</title>
+        <link rel= "stylesheet" type= "text/css" href= "/static/styles/style.css">
+        <script src="{{ url_for('static', filename='scripts/login.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2 style="margin: auto;width: 30%;text-align: center; font-size:50px; color:white;">FLACK</h2>
+        <div id="login_box">
+            <form id="login"  method="post">
+                <input style="width:70%; margin: 5px auto;padding:5px 30px;"id="username" autocomplete="off" autofocus placeholder="Username" type="text">
+                <br>
+                <input style="background-color:#231967; color:white; font-size: 16px; padding: 5px 8px; width:70%; margin:5px auto; padding:5px 30px;" type="submit" onsubmit="return false" value="Login">
+            <form>
+        </div>
+    </body>
+</html>
+

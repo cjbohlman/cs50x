@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search: ReadingRevs
+{% endblock %}
+
+{% block body %}
+<ul>
+    {% for book in books %}
+        <li>
+            <a class="search_book" href="{{ url_for('book', book_name=book.fstrtitle) }}">{{ book.fstrtitle }}</a>
+            <p>Author: {{book.fstrauthor}}</p>
+            <p>Year: {{book.fi16year}}</p>
+            <p>ISBN: {{book.fstrisbn}}</p>
+        </li>
+    {% else %}
+        <li>No books match search criteria.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

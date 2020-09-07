@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flack: Login</title>
+        <link rel= "stylesheet" type= "text/css" href= "/static/styles/style.css">
+        <script src="{{ url_for('static', filename='scripts/login.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Log in to Flack!</h2>
+        <form id="login" action="{{ url_for('home') }}" method="post">
+            <input id="username" autocomplete="off" autofocus placeholder="Username" type="text">
+            <input type="submit">
+        <form>
+    </body>
+</html>
+

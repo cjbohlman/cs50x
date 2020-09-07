@@ -1,0 +1,102 @@
+@font-face {
+    font-family: junction-reg;
+    src: url(Junction-regular.otf);
+}
+
+body {
+    font-family: junction-reg;
+    background:#f3d9b1;
+}
+
+header {
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+h1, .home {
+    font-size: 35px;
+    color: #823329;
+    text-decoration: none;
+}
+
+input[type="text"], input[type="password"] {
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logout {
+    background-color: #8a3033;
+    color: #bfb8ad;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.logout:hover {
+    background-color: #823329;
+}
+
+.login {
+    background-color: #8a3033;
+    color: #bfb8ad;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+    margin-left: 0%;
+    width: 40%;
+}
+
+.login:hover {
+    background-color: #823329;
+}
+
+.search_book {
+    color: black;
+    font-size: 20px;
+    font-weight: bold
+}
+
+.search_book:hover {
+    color: #998888;
+}
+
+input[type="radio"] {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .flex-container {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 96%;
+        margin-left: 0%;
+    }
+
+    .logout {
+        width: 100%;
+    }
+
+    .login {
+        width: 100%;
+    }
+}

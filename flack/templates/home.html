@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flack: Home</title>
+        <link rel= "stylesheet" type= "text/css" href= "/static/styles/style.css">
+        <script src="{{ url_for('static', filename='scripts/home.js') }}"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <nav>
+        <!-- Add a channel. -->
+        <form id="add_channel">
+            <input id="new_channel" autocomplete="off" autofocus placeholder="New channel name" type="text">
+            <input type="submit" onsubmit="return false" value="Add Channel">
+        </form>
+        <!-- Channels go here. -->
+        <div id=channels>
+            <ul id="channel-list">
+            </ul>
+        </div>
+    </nav>
+    <body>
+        <!-- Channel text goes here. -->
+        <div id="messages">
+            <ul id="messages-list">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- <form id="add_message">
+            <input id="new_message" autocomplete="off" autofocus placeholder="New message" type="text">
+            <input type="submit" value="Send Message">
+        </form> -->
+    </body>
+</html>

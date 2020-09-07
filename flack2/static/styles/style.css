@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    color: white;
+}
+
+input {
+    color: black;
+}
+
+li {
+    width: 60%;
+    margin: 15px 10px;
+}
+
+#messages-list {
+    border: #7e6fdc;
+    border-width: 1px;
+    margin: 5px;
+    padding: 5px;
+}
+
+#view_channel {
+    background-color:#231967; 
+    color:white; 
+    font-size: 14px; 
+    padding: 5px 8px; 
+    margin:5px auto; 
+    text-decoration: none;
+    border-width: 1px;
+    border:white;
+}
+
+#login_box {
+    width: 500px;
+    margin: auto;
+    background-color: #7e6fdc;
+    border-radius: 30px;
+    text-align:center;
+}
+
+@font-face {
+    font-family: junction-reg;
+    src: url(Junction-regular.otf);
+}
+
+body {
+    font-family: junction-reg;
+    background:#150f3e;
+}
+
+header {
+    margin: 10px;
+}
+
+
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+    .flex-container {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 96%;
+        margin-left: 0%;
+    }
+
+    .logout {
+        width: 100%;
+    }
+
+    .login {
+        width: 100%;
+    }
+
+    #login_box {
+        width: 90%;
+    }
+}

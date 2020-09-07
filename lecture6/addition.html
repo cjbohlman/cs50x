@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add</title>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style>
+    #mydiv {
+      text-align: center;
+      font-family:sans-serif;
+    }
+
+    #problem {
+      font-size: 72px;
+    }
+  </style>
+</head>
+
+  <body>
+
+    <div id="mydiv"></div>
+
+    <script type="text/babel">
+      class Hello extends React.Component {
+
+        constructor(props) {
+          super(props);
+          this.state = {
+            num1: 1,
+            num2: 1,
+            response: "",
+            score: 0
+          };
+
+        }
+        render() {
+          if (this.state.score === 10) {
+            return (
+              <div id="winner">Winner!</div>
+            );
+          }
+          else {
+            return  (
+            <div>
+              <div id="problem">{this.state.num1}+{this.state.num2}</div>
+              <input onKeyPress={this.inputKeyPress} onChange={this.updateResponse} value = {this.state.response}/>
+              <div>Score: {this.state.score}</div>
+            </div>
+            );
+          }
+        }
+
+        inputKeyPress = (event) => {
+          if (event.key === 'Enter') {
+            var answer = parseInt(this.state.response);
+            if (this.state.num1 + this.state.num2 === answer) {
+              // user got question right
+              this.setState(state => ({
+                score: state.score +1,
+                num1: Math.ceil(Math.random() * 10),
+                num2: Math.ceil(Math.random() * 10),
+                response: ""
+              }));
+            }
+            else {
+              // user got question wrong
+            }
+          }
+        }
+
+        updateResponse = (event) => {
+          this.setState({
+            response: event.target.value
+          });
+        }
+      }
+
+      ReactDOM.render(<Hello />, document.getElementById('mydiv'))
+    </script>
+  </body>
+</html>
